@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Acceuil</title>
+
+    </head>
+    <body>
+        <h1>Bienvenue sur notre site</h1>
+    	<form method="post" action="">
+   			{% csrf_token %}
+    		{{ form }}
+    		<input type="submit" value="Se connecter" />
+		</form>   
+    </body>
+</html>
+
