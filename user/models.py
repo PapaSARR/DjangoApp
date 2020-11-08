@@ -1,8 +1,12 @@
-from django.forms import ModelForm
-from django.contrib.auth.models import User
-# Create your models here.
+from django.db import models
 
-class UserForm(ModelForm):
-    class Meta:
-        model = User
-        fields = ('username', 'email', 'password')
+class User(models.Model):
+	email = models.EmailField()
+	password = models.CharField(max_length=128)
+
+	# def __init__(self,email,password):
+	# 	self.email = email
+	# 	self.password = password
+
+	class Meta:
+		db_table = 'users'
