@@ -2,8 +2,8 @@
 
 {% block title %}Acceuil{% endblock %}
 
-{% block body %}
-    <h1>Bienvenue sur notre site!</h1>
+{% block content %}
+    <h1>Formulaire de connexion</h1>
     <form method="post" action="">
         {% csrf_token %}
         {{ form }}
