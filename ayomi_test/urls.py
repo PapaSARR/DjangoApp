@@ -4,7 +4,7 @@ from user import views
 
 
 urlpatterns = [
-    url(r'^$', views.connexion, name="connexion"),
+    url(r'^$', views.connexion),
     url(r'^user/', include('user.urls'))
 ]
 

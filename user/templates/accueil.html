@@ -3,8 +3,12 @@
 {% block title %}Accueil{% endblock %}
 
 {% block content %}
-    <h1>Accueil</h1>
-    <hr/><br/>
-    <a href="/user/{{user_id}}">Cliquer ici pour modifier vos informations</a>
+	<div class="row">
+    	<div class="col-md-6 mx-auto mt-4">
+		    <h1>Accueil</h1>
+		    <hr/><br/>
+		    <a href="user/{{user_id}}">Cliquer ici pour modifier vos informations</a>
+		</div>
+	</div>
 {% endblock %}
     
