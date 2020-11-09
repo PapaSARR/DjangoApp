@@ -3,12 +3,12 @@
 {% block title %}Connexion{% endblock %}
 
 {% block content %}
-    <form action="" method="post">
-        {% csrf_token %}
-        <div class="row">
-            <div class="col-md-6 mx-auto mt-4">
-                <h1>Formulaire de connexion</h1>
-                <hr/>
+ 	<div class="row">
+        <div class="col-md-6 mx-auto mt-4">
+            <h1>Formulaire de connexion</h1>
+            <hr/>
+    		<form action="/user" method="post">
+        		{% csrf_token %}
                 <div class="form-group">
                     <label for="{{ form.email.id_for_label }}">Email: </label><br/>
                     {{ form.email }} 
@@ -20,9 +20,10 @@
                 </div>
     
                 <input class="btn btn-primary mt-4" type="submit" value="Se connecter"/>
-            </div>
-        </div>        
-    </form>   
+         	</form>   
+	    </div>
+	</div>        
+   
 {% endblock %}
     
 

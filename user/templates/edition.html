@@ -1,9 +1,43 @@
 {% extends 'base.html' %}
 
 {% block title %}Edition{% endblock %}
-
+   
 {% block content %}
-    <h1>Edition</h1>
-    <hr/><br/>
-    <h2>Merci</h2>
+	<div class="row">
+		<div class="col-md-6 mx-auto mt-4">
+			<h1>Pop-up d'édition</h1>
+			<hr/>
+			<p>Votre email est {{email}}</p>
+			<a href="" data-toggle="modal" data-target="#modalEdition">Cliquer ici pour modifier le modifier</a>
+		</div>
+	</div>
+  	<div class="modal" tabindex="-1" role="dialog" id="modalEdition">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Modal d'édition</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+
+	      <div class="modal-body">
+	      	<!--Insertion du formulaire dans le modal-->
+	      	<form action="" method="post">
+	      		{% csrf_token %}
+		        <div class="form-group">
+	                <label for="{{ form.email.id_for_label }}">Email: </label><br/>
+	                {{ form.email }} 
+	            </div> 
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+		        <button type="submit" class="btn btn-primary">Enregistrer</button>
+		      </div>
+	      </form> 
+	    </div>
+	  </div>
+	</div>
+   
 {% endblock %}
+</html>

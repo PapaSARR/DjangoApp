@@ -5,6 +5,6 @@ from user import views
 
 urlpatterns = [
     url(r'^$', views.connexion),
-    url(r'^user/', include('user.urls'))
+ 	url(r'^user', include('user.urls'))
 ]
 
