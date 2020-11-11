@@ -21,7 +21,8 @@ def edition(request):
 		if not user.exists():
 			User.objects.create(email=email,password=password)
 			user = User.objects.get(email=email)
-			context = {'email': user.email, 'form':form}
+			context = {'email': user.email, 'password': user.password, 'form':form}
 		else:
-			context = {'email': user[0].email,  'form':form}
+			User.objects.update_or_create(email=user[0].email,password=user[0].password)
+			context = {'email': user[0].email, 'password': user[0].password, 'form':form}
 	return render(request,'edition.html', context)
