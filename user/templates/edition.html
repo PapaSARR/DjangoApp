@@ -8,7 +8,7 @@
 			<h1>Pop-up d'édition</h1>
 			<hr/>
 			<p>Votre email est {{email}}</p>
-			<a href="" data-toggle="modal" data-target="#modalEdition">Cliquer ici pour modifier le modifier</a>
+			<a href="/user/{{id}}" data-toggle="modal" data-target="#modalEdition">Cliquer ici pour modifier le modifier</a>
 		</div>
 	</div>
   	<div class="modal" tabindex="-1" role="dialog" id="modalEdition">
@@ -23,16 +23,17 @@
 
 	      <div class="modal-body">
 	      	<!--Insertion du formulaire dans le modal-->
-	      	<form action="" method="post">
+	      	<form action="/user/{{id}}" method="post">
 	      		{% csrf_token %}
 		        <div class="form-group">
 	                <label for="{{ form.email.id_for_label }}">Email: </label><br/>
 	                {{ form.email }} 
 	            </div> 
+		      	
 		      	<div class="form-group">
-	                <label for="{{ form.password.id_for_label }}">Password: </label><br/>
+	                <label for="{{ form.email.id_for_label }}">Password: </label><br/>
 	                {{ form.password }} 
-        	 	</div> 
+	            </div> 
         	 
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
