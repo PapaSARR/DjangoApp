@@ -1,7 +1,7 @@
 from django.conf.urls import url
-from django.urls import path
+#from django.urls import path
 from user import views
 
 urlpatterns = [
-	 path('/<int:id>', views.edition)
+	  url(r'/(?P<id>[0-9]+)$', views.edition, name = 'edition'),
 ]
