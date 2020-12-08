@@ -29,7 +29,6 @@ def edition(request,id):
 	if request.method == "POST":
 		form = UserForm(request.POST,instance=user)
 		if form.is_valid():
-			#form.save()
 			User.objects.filter(id=user.id).update(email=user.email)
 		context = {'id': user.id, 'email': user.email, 'form':form}
 		return render(request,'edition.html', context)

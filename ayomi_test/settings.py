@@ -25,7 +25,7 @@ SECRET_KEY = 'llsgs$2lc&__4!j3g#(r8ooytsslt@dc6((882b!hf41v9l7x3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -83,10 +83,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_ayomi_test',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'test',
+        'HOST': 'db',
+        'PORT': 3306,
     }
 }
 
